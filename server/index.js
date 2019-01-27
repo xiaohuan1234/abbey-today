@@ -4,7 +4,7 @@ const   express = require("express"),
 const PORT = process.env.PORT || 8080;
 
 const appetiteRoutes = require("./routes/appetites");
-app.use(appetiteRoutes);
+app.use("/api/appetites", appetiteRoutes);
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
