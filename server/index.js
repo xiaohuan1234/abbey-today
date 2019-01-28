@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const db = require("./models");
 const authRoutes = require("./routes/auth");
 const appetiteRoutes = require("./routes/appetites");
-const { loginRequired } = require("./middleware/auth");
+const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const errorHandler = require("./handlers/error");
 const bodyParser = require("body-parser");
 
@@ -18,6 +18,12 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use("/api/auth", authRoutes);
+app.use(
+  "/api/users/:id/appetites",
+  loginRequired,
+  ensureCorrectUser,
+  appetiteRoutes
+);
 app.get("/api/appetites", loginRequired, async function(req, res, next) {
   try {
     let appetites = await db.Appetite.find()
