@@ -1,7 +1,7 @@
 require("dotenv").config();
 const   express = require("express"),
         app     = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const db = require("./models");
 const authRoutes = require("./routes/auth");
 const appetitesRoutes = require("./routes/appetites");
@@ -37,6 +37,7 @@ app.get("/api/appetites", loginRequired, async function(req, res, next) {
     return next(err);
   }
 });
+
 app.use("/api/appetites", appetitesRoutes);
 app.use(function(req, res, next) {
   let err = new Error("Not Found");

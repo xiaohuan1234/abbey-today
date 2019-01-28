@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 mongoose.set("debug", true);
+mongoose.set('useCreateIndex', true);
 mongoose.Promise = Promise;
 
 var databaseUrl = "mongodb://server:server2019@ds215089.mlab.com:15089/abbey";
