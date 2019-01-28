@@ -1,7 +1,8 @@
 require("dotenv").config();
 const   express = require("express"),
         app     = express();
-const PORT = process.env.PORT || 8081;
+// const PORT = process.env.PORT || 8081;
+const PORT = 8081;
 const db = require("./models");
 const authRoutes = require("./routes/auth");
 const appetitesRoutes = require("./routes/appetites");
@@ -48,5 +49,5 @@ app.use(function(req, res, next) {
 app.use(errorHandler);
 
 app.listen(PORT, process.env.IP, function(){
-    console.log("abbey backend server started.");
+    console.log("abbey backend server started on PORT ", PORT);
 })
