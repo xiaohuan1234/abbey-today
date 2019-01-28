@@ -5,7 +5,7 @@ const {
     createAppetite
 } = require("../handlers/appetites");
 
-// prefix - /api/users/:id/appetites
+// prefix - /api/users/:id/appetite
 router
   .route("/")
   .post(createAppetite);

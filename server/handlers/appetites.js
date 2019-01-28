@@ -10,7 +10,7 @@ exports.getAppetites = async function(req, res, next) {
   }
 };''
 
-// POST - /api/users/:id/appetites
+// POST - /api/users/:id/appetite
 exports.createAppetite = async function(req, res, next) {
   try {
     let appetite = await db.Appetite.create({

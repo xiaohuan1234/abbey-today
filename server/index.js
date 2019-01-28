@@ -4,7 +4,7 @@ const   express = require("express"),
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
 const authRoutes = require("./routes/auth");
-const appetiteRoutes = require("./routes/appetites");
+const appetitesRoutes = require("./routes/appetites");
 const { loginRequired, ensureCorrectUser } = require("./middleware/auth");
 const errorHandler = require("./handlers/error");
 const bodyParser = require("body-parser");
@@ -19,10 +19,10 @@ app.use(bodyParser.urlencoded({
 
 app.use("/api/auth", authRoutes);
 app.use(
-  "/api/users/:id/appetites",
+  "/api/users/:id/appetite",
   loginRequired,
   ensureCorrectUser,
-  appetiteRoutes
+  appetitesRoutes
 );
 app.get("/api/appetites", loginRequired, async function(req, res, next) {
   try {
@@ -37,7 +37,7 @@ app.get("/api/appetites", loginRequired, async function(req, res, next) {
     return next(err);
   }
 });
-app.use("/api/appetites", appetiteRoutes);
+app.use("/api/appetites", appetitesRoutes);
 app.use(function(req, res, next) {
   let err = new Error("Not Found");
   err.status = 404;
