@@ -34,11 +34,11 @@ class Authform extends Component {
             		<h2> {heading} </h2>
                 <form onSubmit={this.handleSubmit}>
                   {signUp && (
-                    <div>
+                    <div className="auth-fields">
                       <input
                         autoComplete="off"
                         className="form-control"
-                        id="email"
+                        id="phone"
                         name="email"
                         onChange={this.handleChange}
                         type="text"
