@@ -74,11 +74,11 @@ font-family: Montserrat;
 }
 
 .line-break {
-    width: 100%; 
+    width: 90%; 
     height: 10px; 
     border-bottom: 1px solid black; 
     text-align: center;
-    margin: 20px;
+    margin: 10px 0 20px 0;
 }
 .line-break span {
     font-size: 13px;
