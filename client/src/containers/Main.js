@@ -1,7 +1,10 @@
 import React from "react";// eslint-disable-line no-unused-vars
+
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import "./Main.css";
 import Authform from "../components/Authform";
+
 /*import { authUser } from "../store/actions/auth";*/
 
 const Main = props => {
@@ -11,14 +14,14 @@ const Main = props => {
       <Switch>
         <Route
           exact
-          path="/signin"
+          path="/login"
           render={props => {
             return (
               <Authform
-                /*onAuth={authUser}*/
-                onAuth={(authType)=>{console.log("auth called by", authType);}}
+                onAuth={(authType)=>console.log("auth called by", authType)}
                 buttonText="Log in"
-                heading="Welcome Back."
+                redirectText="No account? Sign up."
+                heading="Welcome back!"
                 {...props}
               />
             );
@@ -33,8 +36,9 @@ const Main = props => {
                 /*onAuth={authUser}*/
                 onAuth={(authType)=>{console.log("auth called by", authType);}}
                 signUp
-                buttonText="Sign me up!"
-                heading="Join Warbler today."
+                buttonText="Sign Up"
+                redirectText="Already a user? Log in."
+                heading="Welcome to the Abbey!"
                 {...props}
               />
             );

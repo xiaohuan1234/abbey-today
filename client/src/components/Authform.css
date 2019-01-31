@@ -1,0 +1,88 @@
+.auth-form {
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 350px;
+    font-family: Montserrat;
+    padding-bottom: 30px;
+}
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.auth-form h2 {
+    text-align: center;
+}
+
+.auth-form button {
+    height: 40px;
+    width: 250px;
+    margin: 20px;
+    background-color: black;
+    color: white;
+    padding: 0;
+    border: 1px solid black;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+}
+.auth-form a {
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
+}
+.auth-fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-fields input {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    display: block;
+    width: 300px;
+    height: 35px;
+    margin: 10px;
+}
+
+
+
+::placeholder {
+font-family: Montserrat;
+  color: #adadad;
+  opacity: 1; /* Firefox */
+  padding-left: 10px;
+  letter-spacing: 0.6px;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: red;
+}
+
+.line-break {
+    width: 100%; 
+    height: 10px; 
+    border-bottom: 1px solid black; 
+    text-align: center;
+    margin: 20px;
+}
+.line-break span {
+    font-size: 13px;
+    line-height: 20px;
+    background-color: white; 
+    padding: 0 10px;
+}
