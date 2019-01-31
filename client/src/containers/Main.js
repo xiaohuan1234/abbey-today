@@ -1,8 +1,7 @@
 import React from "react";// eslint-disable-line no-unused-vars
-
+import "./Main.css";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import "./Main.css";
 import Authform from "../components/Authform";
 
 /*import { authUser } from "../store/actions/auth";*/

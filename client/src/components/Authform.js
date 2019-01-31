@@ -13,7 +13,7 @@ class Authform extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const authType = this.props.signUp ? "signup" : "signin";
+    const authType = this.props.signUp ? "signup" : "login";
     this.props.onAuth(authType);
     /*this.props.onAuth(authType, this.state).then(() => {
       console.log("LOGGED IN!");
@@ -27,16 +27,14 @@ class Authform extends Component {
   render() {
     const { email, password } = this.state;
     const { signUp, heading, buttonText,redirectText } = this.props;
-
+    const forgotPasswordText = "Forgot password?";
     return (
       <div>
-        <div>
-            <div className="auth-form">
-            <h2> {heading} </h2>
+          <div className="auth-form">
+            		<h2> {heading} </h2>
                 <form onSubmit={this.handleSubmit}>
-                  
                   {signUp && (
-                    <div className="auth-fields">
+                    <div>
                       <input
                         autoComplete="off"
                         className="form-control"
@@ -59,7 +57,8 @@ class Authform extends Component {
                       />
                     </div>
                   )}
-                  {!signUp && (<div className="auth-fields">
+                  {!signUp && (
+                    <div className="auth-fields">
                       <input
                         autoComplete="off"
                         className="form-control"
@@ -78,38 +77,48 @@ class Authform extends Component {
                         value={password}
                         placeholder="Type in password"
                       />
-                  </div>)}
-                  <button
-                    type="submit"
-                    className="btn btn-primary btn-block btn-lg">
-                    {buttonText}
-                  </button>
-                  <Route path="/login" render={() => <Link style={{marginTop: "8px", textAlign: "right", height: "11px", lineHeight: "11px"}} to="/forgotpassword">forgot password</Link>}/>
-                  <Route path="/signup" render={() => <div style={{height: "24px"}}> </div>}/>
-                  <div className="line-break">
-                  <span>or</span>
-                </div>
-                <div className="third-party">
-                <button
-                    type="button"
-                    className="btn btn-primary btn-block btn-lg">
-                    Continue with Facebook
-                </button>
-                <button
-                    type="button"
-                    className="btn btn-primary btn-block btn-lg">
-                    Continue with Google
-                </button>
-                
-                <Switch>
-                <Route path="/login" render={() => <Link to="/signup">{redirectText} </Link>}/>
-                <Route path="/signup" render={() => <Link to="/login">{redirectText} </Link>}/>
-                </Switch>
-                </div>
+                    </div>
+                  )}
+                  <div>
+	                  <button
+	                    type="submit"
+	                    className="btn btn-primary btn-block btn-lg">
+	                    {buttonText}
+	                  </button>
+	                  <Route 
+	                    path="/login" 
+	                    render={() => 
+	                      <Link id="forgot-password-label"
+	                        to="/forgotpassword">{forgotPasswordText}</Link>}
+	                  />
+	                  <Route 
+	                    path="/signup" 
+	                    render={() => 
+	                      <div className="forgot-password-placeholder">
+	                      </div>}
+	                  />
+                  </div>
+                  <div className="third-party">
+	                  <div className="line-break">
+	                    <span>or</span>
+	                  </div>
+                    <button
+                        type="button"
+                        className="btn btn-primary btn-block btn-lg">
+                        Continue with Facebook
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-primary btn-block btn-lg">
+                        Continue with Google
+                    </button>
+                  </div>
+                  <Switch>
+                    <Route path="/login" render={() => <Link className="auth-redirect" to="/signup">{redirectText} </Link>}/>
+                    <Route path="/signup" render={() => <Link className="auth-redirect" to="/login">{redirectText} </Link>}/>
+                  </Switch>
                 </form>
-                
             </div>
-        </div>
     </div>);
   }
 }

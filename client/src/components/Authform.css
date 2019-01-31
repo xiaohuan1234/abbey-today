@@ -1,17 +1,18 @@
 /*csslint box-sizing: false*/
 
 .auth-form {
-    /*size*/
+    /*size and position*/
     height: 500px;
     width: 380px;
     box-sizing: border-box;
     padding: 20px 0 30px 0;
     
-    /*flex*/
+    /*content alignment*/
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     
     /*font and color*/
     border: 1px solid black;
@@ -24,92 +25,101 @@
     justify-content: center;
     align-items: center;
 }
-.auth-form h2 {
-    text-align: center;
-}
 
 .auth-form button {
-    height: 40px;
+    /*size and position*/
     width: 250px;
+    height: 40px!important;
+    line-height: 40px;
+    padding: 0px;
     margin: 5px;
-    /*border: 1px solid black;*/
+    align-items: center;
+    
+    /*font and color*/
+    background-color: #E3E3E3;
     background-color: hsla(0,0%,89%,.6);
     border: none;
-    padding: 10px 33px;
-    /*border: 1px solid black;*/
     font-family: Montserrat;
     font-size: 13px;
     font-weight: 400;
 }
 .auth-form a {
-    text-decoration: none;
-    color: black;
-    font-size: 11px;
-    text-align: center;
+    /*size and position*/
     width: 250px;
     height: 40px;
     line-height: 40px;
     margin: 5px;
     display: block;
-}
-.auth-fields {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
+    /*font and color*/
+    text-decoration: none;
+    color: black;
+    font-size: 11px;
 }
 
-.auth-fields input {
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    display: block;
+.auth-form input {
+    /*size and position*/
     width: 250px;
     height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    display: block;
     margin: 5px;
+    padding-left: 10px;
+    
+    /*font and color*/
+    border: 1px solid #ccc;
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
 }
 
-
-
-::placeholder {
-font-family: Montserrat;
-  color: #adadad;
-  opacity: 1; /* Firefox */
-  padding-left: 10px;
-  letter-spacing: 0.6px;
-  font-size: 13px;
-  font-weight: 200;
+.auth-form ::placeholder {
+    /*font and color*/
+    color: #adadad;
+    opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
- color: red;
+    color: #adadad;
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
- color: red;
+     color: #adadad;
 }
 
 .line-break {
-    width: 90%; 
     height: 10px; 
+    /*uncomment the next line to have a line running across the text*/
     /*border-bottom: 1px solid black; */
-    text-align: center;
-    margin: 10px 0 30px 0;
+    margin: 10px 10px 30px 10px;
 }
 .line-break span {
-    font-size: 13px;
+    /*size and position*/
     line-height: 20px;
+    
+    /*font and color*/
     background-color: white; 
+    font-size: 13px;
     padding: 0 10px;
 }
 
 .third-party {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    /*uncomment the next line to turn off fb and google signin*/
+    /*display: none;*/
 }
 
-.forgot-password {
-    text-align: right;
+#forgot-password-label {
+    /*size and position*/
+    margin: 8px 0px 10px 0px;
+    height: 11px;
+    line-height: 11px;
+}
+.forgot-password-placeholder {
+    /*size and position*/
+    height: 29px;
+}
+.auth-redirect {
+    margin-top: 20px!important;
 }
