@@ -32,8 +32,9 @@ class Authform extends Component {
       <div>
         <div>
             <div className="auth-form">
+            <h2> {heading} </h2>
                 <form onSubmit={this.handleSubmit}>
-                  <h2>{heading}</h2>
+                  
                   {signUp && (
                     <div className="auth-fields">
                       <input
@@ -83,10 +84,11 @@ class Authform extends Component {
                     className="btn btn-primary btn-block btn-lg">
                     {buttonText}
                   </button>
-                </form>
-                <div className="line-break">
+                  <Route path="/login" render={() => <Link style={{marginTop: "8px", textAlign: "right", height: "11px", lineHeight: "11px"}} to="/forgotpassword">forgot password</Link>}/>
+                  <div className="line-break">
                   <span>or</span>
                 </div>
+                <div className="third-party">
                 <button
                     type="button"
                     className="btn btn-primary btn-block btn-lg">
@@ -97,10 +99,14 @@ class Authform extends Component {
                     className="btn btn-primary btn-block btn-lg">
                     Continue with Google
                 </button>
+                
                 <Switch>
-                <Route path="/login" render={() => <Link to="/signup">{redirectText}</Link>}/>
-                <Route path="/signup" render={() => <Link to="/login">{redirectText}</Link>}/>
+                <Route path="/login" render={() => <Link to="/signup">{redirectText} </Link>}/>
+                <Route path="/signup" render={() => <Link to="/login">{redirectText} </Link>}/>
                 </Switch>
+                </div>
+                </form>
+                
             </div>
         </div>
     </div>);
