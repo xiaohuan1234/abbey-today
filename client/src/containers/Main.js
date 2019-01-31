@@ -19,7 +19,7 @@ const Main = props => {
             return (
               <Authform
                 onAuth={(authType)=>console.log("auth called by", authType)}
-                buttonText="Log in"
+                buttonText="Log In"
                 redirectText="No account? Sign up."
                 heading="Welcome back!"
                 {...props}

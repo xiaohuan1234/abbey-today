@@ -85,6 +85,7 @@ class Authform extends Component {
                     {buttonText}
                   </button>
                   <Route path="/login" render={() => <Link style={{marginTop: "8px", textAlign: "right", height: "11px", lineHeight: "11px"}} to="/forgotpassword">forgot password</Link>}/>
+                  <Route path="/signup" render={() => <div style={{height: "24px"}}> </div>}/>
                   <div className="line-break">
                   <span>or</span>
                 </div>
